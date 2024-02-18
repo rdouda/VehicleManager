@@ -1,17 +1,29 @@
 package org.rdouda;
 
+import org.rdouda.VehiculeManager.Car;
+import org.rdouda.VehiculeManager.Exceptions.GarageException;
+import org.rdouda.VehiculeManager.Garage;
+import org.rdouda.VehiculeManager.Truck;
+import org.rdouda.VehiculeManager.VehicleFactory;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Garage garage = new Garage("Garage", "238 State St");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Car car = VehicleFactory.createCar();
+        Truck truck = VehicleFactory.createTruck();
+
+        garage.add(car);
+        garage.add(truck);
+
+        garage.display();
+
+        try{
+            garage.remove(car);
+        }catch (GarageException garageException){
+            System.out.println("Error: Error unknown error.");
         }
     }
 }
