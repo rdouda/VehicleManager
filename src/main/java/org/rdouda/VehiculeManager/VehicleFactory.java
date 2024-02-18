@@ -8,7 +8,11 @@ public class VehicleFactory {
         System.out.println("Enter information for the Car: ");
         System.out.print("ID:    ");
         int carId = scanner.nextInt();
-        // scanner.nextLine(); // Discard the remaining newline before reading the brand and color.
+        scanner.nextLine();
+        /*
+            Scanner does not consume the newline character (\n) after reading the integer.
+            scanner.nextLine(); Discard the remaining newline before reading the brand and color.
+         */
         System.out.print("Brand: ");
         String carBrand = scanner.nextLine();
         System.out.print("Color: ");
@@ -23,7 +27,11 @@ public class VehicleFactory {
         System.out.println("Enter information for the Truck: ");
         System.out.print("ID:    ");
         int carId = scanner.nextInt();
-        // scanner.nextLine(); // Discard the remaining newline before reading the brand and color.
+        scanner.nextLine();
+        /*
+            Scanner does not consume the newline character (\n) after reading the integer.
+            scanner.nextLine(); Discard the remaining newline before reading the brand and color.
+         */
         System.out.print("Brand: ");
         String carBrand = scanner.next();
         System.out.print("Color: ");
