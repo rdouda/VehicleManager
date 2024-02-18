@@ -33,10 +33,10 @@ public class Garage {
                 vehicles.remove(vehicle);
                 System.out.println("Vehicle removed successfully.");
             } else {
-                throw new GarageException("Error: Vehicle not found in the garage.");
+                throw new GarageException("Vehicle not found in the garage.");
             }
         } else {
-            throw new GarageException("Error: Cannot remove a null vehicle.");
+            throw new GarageException("Cannot remove a null vehicle.");
         }
     }
     public void display() {

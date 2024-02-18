@@ -17,6 +17,12 @@ public class Main {
         garage.add(car1);
         garage.add(truck2);
 
+        try {
+            garage.remove(car1);
+            garage.remove(car1);
+        }catch (GarageException garageException){
+            System.out.println(garageException.getMessage());
+        }
 
         garage.display();
 

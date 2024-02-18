@@ -52,6 +52,20 @@ class GarageTest {
         assertFalse(garage.getVehicles().contains(car));
     }
     @org.junit.jupiter.api.Test
+    public void testRemoveVehicleDoesNotExist() {
+        Car car = new Car(1, "Toyota", "Blue");
+        garage.add(car);
+
+        try {
+            garage.remove(car);
+            garage.remove(car);
+            fail("Expected GarageException was not thrown");
+        } catch (GarageException garageException) {
+            assertEquals("Vehicle not found in the garage.", garageException.getMessage());
+        }
+    }
+
+    @org.junit.jupiter.api.Test
     public void testRemoveNullVehicle() {
         try {
             garage.remove(null);
