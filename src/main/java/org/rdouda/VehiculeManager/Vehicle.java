@@ -19,6 +19,14 @@ public abstract class Vehicle implements IVehicle {
         this.brand = brand;
         this.colour = colour;
     }
+    /**
+     * Gets vehicle ID.
+     *
+     * @return Vehicle's ID.
+     */
+    public int getId() {
+        return this.id;
+    }
 
     /**
      * Displays information about the vehicle.
