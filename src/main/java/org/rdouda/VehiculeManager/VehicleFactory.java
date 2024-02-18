@@ -22,7 +22,6 @@ public class VehicleFactory {
     }
 
     public static Truck createTruck(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter information for the Truck: ");
         System.out.print("ID:    ");
         int carId = scanner.nextInt();
