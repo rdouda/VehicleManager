@@ -17,11 +17,10 @@ public abstract class Vehicle implements IVehicle {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        if (obj == null)
             return false;
-        if (!(obj instanceof Vehicle))
-            return false;
-        Vehicle vehicle = (Vehicle) obj;
-        return id == vehicle.id;
+        Vehicle otherVehicle = (Vehicle) obj;
+        return this.id == otherVehicle.id;
     }
+
 }

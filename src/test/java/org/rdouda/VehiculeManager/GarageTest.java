@@ -33,6 +33,14 @@ class GarageTest {
         assertEquals(1, garage.getVehicles().size());
     }
     @org.junit.jupiter.api.Test
+    public void testAddDuplicateVehicleIDs() {
+        Car car = new Car(1, "Toyota", "Blue");
+        Truck truck = new Truck(1, "Volkswagen", "Gray");
+        garage.add(car);
+        garage.add(truck);
+        assertEquals(1, garage.getVehicles().size());
+    }
+    @org.junit.jupiter.api.Test
     public void testRemoveVehicle() {
         Car car = new Car(1, "Toyota", "Blue");
         garage.add(car);
