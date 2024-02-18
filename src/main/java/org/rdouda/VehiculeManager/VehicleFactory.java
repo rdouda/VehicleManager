@@ -3,8 +3,8 @@ package org.rdouda.VehiculeManager;
 import java.util.Scanner;
 
 public class VehicleFactory {
+    private static final Scanner scanner = new Scanner(System.in);
     public static Car createCar(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter information for the Car: ");
         System.out.print("ID:    ");
         int carId = scanner.nextInt();
@@ -18,7 +18,6 @@ public class VehicleFactory {
         System.out.print("Color: ");
         String carColor = scanner.nextLine();
         Car car = new Car(carId, carBrand, carColor);
-        scanner.close();
         return car;
     }
 
@@ -37,7 +36,10 @@ public class VehicleFactory {
         System.out.print("Color: ");
         String carColor = scanner.next();
         Truck truck = new Truck(carId, carBrand, carColor);
-        scanner.close();
         return truck;
+    }
+
+    public static void closeScanner(){
+        scanner.close();
     }
 }

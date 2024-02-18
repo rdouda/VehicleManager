@@ -31,5 +31,7 @@ public class Main {
             System.out.println(garageException.getMessage());
         }
         garage.display();
+
+        VehicleFactory.closeScanner();
     }
 }
