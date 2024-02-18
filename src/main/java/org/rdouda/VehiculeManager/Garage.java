@@ -1,5 +1,7 @@
 package org.rdouda.VehiculeManager;
 
+import org.rdouda.VehiculeManager.Exceptions.GarageException;
+
 import java.util.ArrayList;
 
 public class Garage {
@@ -25,16 +27,16 @@ public class Garage {
         }
     }
 
-    public void remove(Vehicle vehicle) {
+    public void remove(Vehicle vehicle) throws GarageException {
         if (vehicle != null) {
             if (vehicles.contains(vehicle)) {
                 vehicles.remove(vehicle);
                 System.out.println("Vehicle removed successfully.");
             } else {
-                System.out.println("Error: Vehicle not found in the garage.");
+                throw new GarageException("Error: Vehicle not found in the garage.");
             }
         } else {
-            System.out.println("Error: Cannot remove a null vehicle.");
+            throw new GarageException("Error: Cannot remove a null vehicle.");
         }
     }
     public void display() {

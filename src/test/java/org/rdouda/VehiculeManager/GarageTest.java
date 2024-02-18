@@ -1,5 +1,7 @@
 package org.rdouda.VehiculeManager;
 
+import org.rdouda.VehiculeManager.Exceptions.GarageException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GarageTest {
@@ -34,7 +36,20 @@ class GarageTest {
     public void testRemoveVehicle() {
         Car car = new Car(1, "Toyota", "Blue");
         garage.add(car);
-        garage.remove(car);
+        try {
+            garage.remove(car);
+        } catch (GarageException garageException){
+            System.out.println(garageException.getMessage());
+        }
         assertFalse(garage.getVehicles().contains(car));
+    }
+    @org.junit.jupiter.api.Test
+    public void testRemoveNullVehicle() {
+        try {
+            garage.remove(null);
+        } catch (GarageException garageException){
+            System.out.println(garageException.getMessage());
+        }
+        assertFalse(garage.getVehicles().contains(null));
     }
 }
